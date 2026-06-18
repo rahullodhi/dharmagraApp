@@ -1304,6 +1304,7 @@ span.badge.blue + h3 {
     align-items:center;
     justify-content:center;
     overflow: hidden;
+    opacity: 0;
 }
 .profile-icon img{
 width: 100%;
