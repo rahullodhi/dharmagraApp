@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+   <style>
+        
+  /* ── DOCTOR CARDS ── */
+  .doctor-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 13px 13px 11px;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    border: 1px solid #ddd;
+  }
+  .avatar-wrap { position: relative; flex-shrink: 0; }
+  .avatar-circle {
+    width: 62px; height: 62px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; font-weight: 700; color: #fff;
+    letter-spacing: -0.5px;
+  }
+  .verified-badge {
+    position: absolute; bottom: 1px; right: 1px;
+    width: 18px; height: 18px; border-radius: 50%;
+    background: #22c55e;
+    border: 2.5px solid #fff;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 8px;
+  }
+
+  .card-body { flex: 1; min-width: 0; }
+  .card-top  { display: flex; align-items: flex-start; justify-content: space-between; gap: 6px; }
+
+  .dist-badge {
+    background: #fff0f3;
+    color: #e03e3e; font-size: 11px; font-weight: 600;
+    padding: 3px 9px; border-radius: 7px; white-space: nowrap; flex-shrink: 0;
+  }
+  .specialty { font-size: 11.5px; color: #95a0b8; margin: 2px 0 7px; }
+
+  .meta-row {
+    display: flex; align-items: center; gap: 5px;
+    font-size: 11.5px; color: #485372; margin-bottom: 5px;
+  }
+  .star-icon { color: #f59e0b; font-size: 12px; margin-left: -2px; }
+  .sep { color: #c5ccd9; }
+ 
+  .book-row { display: flex; justify-content: flex-start; margin-top: 10px; }
+  .book-btn {
+    background: #1a2d5a; color: #fff;
+    border: none; border-radius: 10px;
+    padding: 9px 15px;
+    font-size: 12px; font-weight: 600;
+    display: flex; align-items: center; gap: 6px;
+    cursor: pointer; font-family: 'Poppins', sans-serif;
+    transition: background 0.18s;
+    letter-spacing: 0.01em;
+  }
+  .book-btn:hover { background: #233f7a; }
+  .book-btn i { font-size: 12px; }
+  .book-btn.red { background: #e53e3e; }
+  .book-btn.red:hover { background: #c53030; }
+
+    </style>
+</head>
+
+<body>
+
+
+     <header class="app-header">
+
+    <div class="header-left">
+
+        <a href="video-upload.html" class="back-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+            </svg>
+        </a>
+
+        <div class="title-area">
+            <h1>Assignment Report</h1>
+        </div>
+
+    </div>
+
+    <div class="profile-card">
+
+        <div class="profile-icon">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQGfmmtap9UGSw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1668447329811?e=2147483647&v=beta&t=0KlNkR86z7JOy1hLVPWrASGpK72NTRUy26PAxBsZ-QY" alt="">
+        </div>
+
+        <!-- <div class="profile-info">
+            <h4>Hello, Parent!</h4>
+            <span>Parent Account</span>
+        </div> -->
+
+    </div>
+
+</header>
+<div class="fimal-report-poage">
+    <div class="mob">
+        <div class="mob-ziro">
+
+
+            <div class="mob-one">
+
+                <div class="mob-img"> <img src="image/rl1.png" alt=""> </div>
+            </div>
+
+            <div class="mob-two">
+
+                <div class="ful">
+
+                    <h3> Your full Report is Ready! </h3>
+
+                    <p> We have analyzed your responses and videos to generate a comprehensive report for your child
+                    </p>
+
+                </div>
+
+                
+
+            </div>
+            <div class="dow">
+
+                    <a href="image/report.pdf" class="login-btn blue"> <i class="bi bi-eye-fill"></i> <span class="view">View Report</span> </a>
+
+                    <a href="image/report.pdf" class="login-btn" download="Full Report"> <i class="bi bi-download"></i> <span>Download PDF</span> </a>
+
+                </div>
+
+        </div>
+    </div>
+
+    <div class="child">
+
+
+   
+
+
+
+    <div class="alert">
+
+        <div class="alert-ziro">
+
+            <div class="alert-one">
+
+               <i class="bi bi-info-circle"></i>
+
+            </div>
+
+            <div class="alert-three">
+                <div class="alert-for">
+                    <p>These results are based on the assessment and videos you have provided. This is not a medical
+                        diagnosis. Please consult a specialist for further evaluation.</p>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    </div>
+    <div class="near">
+
+        <div class="near-ziro">
+
+            <div class="near-one">
+
+                <div class="near-two">
+
+                    <h3>Let's Support Your Child Together </h3>
+
+                    <p>Based on your report,Book an appointment with our DHARMAGRA CARE specialists for personalized guidance and expert recommendations.</p>
+
+
+                </div>
+
+            </div>
+
+            <div class="near-three">
+                <div class="near-for">
+                    <img src="image/rl5.png" alt="">
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+     
+     <div class="doctor-card">
+          <div class="avatar-wrap">
+            <div class="avatar-circle" style="background: linear-gradient(135deg, #6881be, #1a2d5a);">
+                <img src="image/logo.png" alt="">
+            </div>
+            <div class="verified-badge"><i class="fas fa-check"></i></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <span class="doc-name">DHARMAGRA CARE</span>
+              <span class="dist-badge">1.2 km</span>
+            </div>
+            <div class="specialty">
+        A Learning Foundation for Neurodiverse kids
+    </div>
+            <div class="meta-row">
+              <i class="fas fa-star star-icon"></i>
+              <span>4.8 (120 reviews)</span>
+              <span class="sep">|</span>
+              <span>8+ Years Exp.</span>
+            </div>
+            <div class="loc-row"><i class="fas fa-location-dot"></i> Sector 61, Noida</div>
+            <div class="book-row">
+              <a href="calender.html" class="login-btn"><i class="far fa-calendar-check"></i> Book Appointment</a>
+            </div>
+          </div>
+        </div>
+
+    <div class="find">
+
+        <div class="find-ziro">
+
+
+
+                <div class="loc">
+
+                    <i class="bi bi-geo-alt-fill"></i>
+
+                </div>
+
+
+               
+
+
+            <div class="find-two">
+
+                <h3> Find Nearest Doctors, Therapy Centers </h3>
+
+                <p> Connect with child development specialists and pediatricians near your location. </p>
+                <a href="location-allow.html" class="login-btn blue">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <span>Choose Nearest Location</span>
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    
+</div>
+    
+
+</body>
+
+</html>

@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Appointment Confirmed</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+ 
+
+
+
+  .account-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1.5px solid #E5E9EF;
+    border-radius: 10px;
+    padding: 7px 10px 7px 8px;
+    background: #fff;
+  }
+
+  .avatar-circle {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #1A2B4A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .avatar-circle svg {
+    width: 18px;
+    height: 18px;
+    fill: #fff;
+  }
+
+  .account-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .account-info .hello {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1A2B4A;
+    line-height: 1.2;
+  }
+
+  .account-info .role {
+    font-size: 11px;
+    color: #6B7B8D;
+  }
+
+  .chevron {
+    font-size: 14px;
+    color: #6B7B8D;
+    margin-left: 2px;
+  }
+
+  /* CONTENT WRAPPER */
+  .content {
+    padding: 16px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* CONFIRMED BANNER CARD */
+  .confirmed-card {
+    background: #f5faf7;
+    border-radius: 10px;
+    padding: 22px 18px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    border: 1px solid #d5d7d9c9;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+  }
+
+  .checkmark-wrap {
+    position: relative;
+    flex-shrink: 0;
+    width: 100px;
+    height: 70px;
+  }
+
+  .checkmark-circle {
+ width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: #2DBE6C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 10px;
+  }
+
+  .checkmark-circle svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  /* Confetti dots */
+  .confetti {
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  .confirmed-text {
+    flex: 1;
+  }
+
+  .confirmed-text h2 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #2DBE6C;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+
+  .confirmed-text p {
+    font-size: 13px;
+    color: #5A6B7A;
+    line-height: 1.5;
+    margin-bottom: 0px;
+  }
+
+  .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border: 1.5px solid #E5E9EF;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
+    background-color: #fff;
+  }
+
+  .contact-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 9px 8px;
+    font-size: 12px;
+    color: var(--primary);
+    font-weight: 600;
+  }
+
+  .contact-item svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    color: var(--secondary);
+  }
+
+  .contact-divider {
+    width: 1px;
+    height: 36px;
+    background: #E5E9EF;
+  }
+
+  
+  /* ── DOCTOR CARDS ── */
+  /* ── DOCTOR CARD ── */
+  .doctor-card {
+       background: #fff;
+    border-radius: 10px 10px 0 0;
+    padding: 0px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+       padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  .doctor-img-wrap {
+    position: relative;
+    flex-shrink: 0;
+  }
+  .doctor-img img{
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .doctor-img {
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: linear-gradient(135deg, #c9d6ff, #e2e2e2);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .doctor-img svg { width: 52px; height: 52px; color: #7a9fff; }
+  .verified-badge {
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 22px; height: 22px;
+    background: #3d5af1;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    border: 2px solid #fff;
+  }
+  .verified-badge svg { width: 12px; height: 12px; color: #fff; }
+
+  .doctor-info { flex: 1; }
+  .doctor-info h2 { font-size: 16px; font-weight: 700; color: var(--primary); }
+  .doctor-info .specialty { font-size: 12.5px; color: #666; margin-top: 3px; }
+  .doctor-meta {
+    display: flex; align-items: center; gap: 6px;
+    margin-top: 5px;
+  }
+  .stars { display: flex; align-items: center; gap: 3px; font-size: 12px; color: #555; white-space: nowrap; }
+  .star-icon { color: #e85d5d; font-size: 13px; margin-top: -3px; }
+  .meta-dot { color: #ccc; font-size: 11px; }
+  .experience { font-size: 11px; color: #555; white-space: nowrap; }
+  .location {
+    display: flex; align-items: center; gap: 4px;
+    margin-top: 5px; font-size: 11px; color: #555;
+  }
+  .location svg { width: 13px; height: 13px; color: #e85d5d; flex-shrink: 0; margin-left: -3px; }
+  .location .dist { color: #e85d5d; font-weight: 500; font-size: 12px; white-space: nowrap;}
+
+  .happy-badge {
+      display: inline-flex;
+    align-items: center;
+    background: #fff3f3;
+    border-radius: 6px;
+    padding: 6px 10px;
+    gap: 8px;
+    align-self: flex-start;
+    margin-top: 10px;
+  }
+  .happy-badge .icon-row { display: flex; align-items: center; gap: 3px; }
+  .happy-badge svg { width: 16px; height: 16px; color: #e85d5d; }
+  .happy-badge .count { font-size: 14px; font-weight: 800; color: #e85d5d; }
+  .happy-badge .label { font-size: 10px; color: #e85d5d; font-weight: 500; text-align: center; }
+
+  /* APPOINTMENT DETAILS CARD */
+  .details-card {
+   background: #fff;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .section-title svg {
+    width: 20px;
+    height: 20px;
+    color: #1A2B4A;
+  }
+
+  .section-title span {
+   font-size: 15px;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  .details-grid {
+      display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+    margin-bottom: 20px;
+    gap: 5px;
+  }
+
+  .detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 14px 5px;
+    gap: 10px;
+   position: relative;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+
+  .detail-item:first-child:after {
+    display: none;
+  }
+
+  .detail-icon-wrap {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .detail-icon-wrap.blue-bg { background: #EBF2FB; }
+  .detail-icon-wrap.red-bg  { background: #FDE9E9; }
+  .detail-icon-wrap.blue2-bg { background: #EBF2FB; }
+  .detail-icon-wrap.pink-bg  { background: #FDE9E9; }
+
+  .detail-icon-wrap svg {
+    width: 18px;
+    height: 18px;
+  }
+  .detail-icon-wrap.blue-bg svg  { color: #2E7DD4; }
+  .detail-icon-wrap.red-bg svg   { color: #E05A1E; }
+  .detail-icon-wrap.blue2-bg svg { color: #2E7DD4; }
+  .detail-icon-wrap.pink-bg svg  { color: #E05A1E; }
+
+  .detail-label {
+       font-size: 12px;
+    color: var(--primary);
+    font-weight: 500;
+    margin-bottom: 3px;
+  }
+
+  .detail-value {
+   font-size: 13px;
+    font-weight: 600;
+    color: var(--primary);
+    line-height: normal;
+  }
+
+  .detail-sub {
+       font-size: 11px;
+    color: #5A6B7A;
+    font-weight: 400;
+    margin-top: 5px;
+  }
+
+  .reminder-banner {
+    background: #EFF4FF;
+    border-radius: 10px;
+    padding: 11px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .reminder-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid #2E7DD4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .reminder-icon svg {
+    width: 13px;
+    height: 13px;
+    color: #2E7DD4;
+  }
+
+  .reminder-text {
+    font-size: 12.5px;
+    color: #1A2B4A;
+  }
+
+  /* IMPORTANT INFO CARD */
+  .info-card {
+    background: #FFF8F6;
+    border-radius: 16px;
+    padding: 18px;
+    border: 1px solid #FDDDD3;
+  }
+
+  .info-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #C04A1A;
+    margin-bottom: 14px;
+  }
+
+  .info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .info-icon-wrap {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .info-icon-wrap.cal   { background: #FDE9E9; }
+  .info-icon-wrap.vid   { background: #FDE9E9; }
+  .info-icon-wrap.doc   { background: #FDE9E9; }
+  .info-icon-wrap.support { background: #FDE9E9; }
+
+  .info-icon-wrap svg {
+    width: 17px;
+    height: 17px;
+    color: #E05A1E;
+  }
+
+  .info-item-text {
+    font-size: 13px;
+    color: #3A4A5A;
+    line-height: 1.5;
+    padding-top: 8px;
+  }
+
+  /* DASHBOARD BUTTON */
+  .dashboard-btn {
+    background: #1A2B4A;
+    border-radius: 14px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+  }
+
+  .dashboard-btn svg {
+    width: 22px;
+    height: 22px;
+    fill: #fff;
+  }
+
+  .dashboard-btn span {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* SECURE FOOTER */
+  .secure-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 14px;
+    margin-bottom: 10px;
+  }
+
+  .secure-footer svg {
+    width: 13px;
+    height: 13px;
+    color: #8A9BB0;
+  }
+.cardmerge {
+    width: 100%;
+    float: left;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 2px #ddd;
+    border-radius: 10px;
+    padding: 15px;
+}
+  
+  .secure-footer span {
+    font-size: 12px;
+    color: #8A9BB0;
+  }
+</style>
+</head>
+<body>
+<div class="screen">
+
+ <!-- <header class="app-header">
+
+    <div class="header-left">
+
+        <a href="dashboard.html" class="back-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+            </svg>
+        </a>
+
+        <div class="title-area">
+            <h1>Appointment Booked</h1>
+        </div>
+
+    </div>
+
+    <div class="profile-card">
+
+        <div class="profile-icon">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQGfmmtap9UGSw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1668447329811?e=2147483647&v=beta&t=0KlNkR86z7JOy1hLVPWrASGpK72NTRUy26PAxBsZ-QY" alt="">
+        </div>
+
+      
+
+    </div>
+
+</header> -->
+
+  <div class="content">
+
+    <!-- CONFIRMED BANNER -->
+    <div class="confirmed-card">
+      <div class="checkmark-wrap">
+        <!-- Confetti dots positioned around the circle -->
+        <div class="confetti" style="width:7px;height:7px;background:#E05A1E;top:-5px;left:50%;transform:translateX(-50%);"></div>
+        <div class="confetti" style="width:6px;height:6px;background:#2E7DD4;top:4px;right:-4px;"></div>
+        <div class="confetti" style="width:5px;height:5px;background:#2DBE6C;top:-2px;left:8px;"></div>
+        <div class="confetti" style="width:6px;height:6px;background:#F5A623;bottom:4px;right:-6px;"></div>
+        <div class="confetti" style="width:5px;height:5px;background:#E05A1E;bottom:-4px;left:30%;"></div>
+        <div class="confetti" style="width:6px;height:6px;background:#2E7DD4;bottom:6px;left:-5px;"></div>
+        <div class="confetti" style="width:4px;height:4px;background:#C4B5F5;top:14px;left:-5px;"></div>
+
+        <div class="checkmark-circle">
+          <svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 17L13.5 24L27 10" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="confirmed-text">
+        <h2>Your Appointment is Confirmed!</h2>
+        <p>We have sent the appointment details to your registered email and phone number.</p>
+       
+      </div>
+      
+       <div class="contact-row">
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+            <span>kushagra123@gmail.com</span>
+          </div>
+          <div class="contact-divider"></div>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.7 12.09a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.63 1.5h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.09a16 16 0 0 0 7 7l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17.42z"/>
+            </svg>
+            <span>+91 98765 43210</span>
+          </div>
+        </div>
+
+    </div>
+    
+
+    <div class="cardmerge">
+       <div class="doctor-card">
+      <div class="doctor-img-wrap">
+        <div class="doctor-img">
+          <img src="image/logo.png" alt="">
+       
+        </div>
+        <div class="verified-badge">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+      </div>
+
+      <div class="doctor-info">
+        <h2>DHARMAGRA CARE</h2>
+        <div class="specialty">
+        A Learning Foundation for Neurodiverse kids
+    </div>
+        <div class="doctor-meta">
+          <span class="stars">
+            <span class="star-icon">★</span>
+            <strong>4.8</strong> <span style="color:#aaa">(120 reviews)</span>
+          </span>
+          <span class="meta-dot">|</span>
+          <span class="experience">8+ Years Experience</span>
+        </div>
+        <div class="location">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Sector 61, Noida.<span class="dist">1.2 km away</span>
+        </div>
+        <div class="happy-badge">
+        <div class="icon-row">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          <span class="count">500+</span>
+        </div>
+        <div class="label">Happy Parents</div>
+      </div> 
+      </div>
+
+      <!-- <div class="happy-badge">
+        <div class="icon-row">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          <span class="count">500+</span>
+        </div>
+        <div class="label">Happy Parents</div>
+      </div> -->
+    </div>
+
+    <!-- APPOINTMENT DETAILS CARD -->
+    <div class="details-card">
+      <div class="section-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        <span>Appointment Details</span>
+      </div>
+
+      <div class="details-grid">
+        <div class="detail-item">
+          <div class="detail-icon-wrap blue-bg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </div>
+          <div>
+            <div class="detail-label">Date</div>
+            <div class="detail-value">24 June 2026</div>
+            <div class="detail-sub">(Saturday)</div>
+          </div>
+        </div>
+
+        <div class="detail-item">
+          <div class="detail-icon-wrap red-bg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <div>
+            <div class="detail-label">Time</div>
+            <div class="detail-value">10:00 AM</div>
+            <div class="detail-sub">(IST)</div>
+          </div>
+        </div>
+
+        <div class="detail-item">
+          <div class="detail-icon-wrap blue2-bg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="23 7 16 12 23 17 23 7"/>
+              <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+            </svg>
+          </div>
+          <div>
+            <div class="detail-label">Type</div>
+            <div class="detail-value">Video</div>
+            <div class="detail-sub">Consultation</div>
+          </div>
+        </div>
+
+        <div class="detail-item">
+          <div class="detail-icon-wrap pink-bg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <div>
+            <div class="detail-label">Patient</div>
+            <div class="detail-value">kushagra mishra</div>
+            <div class="detail-sub">(8 Years, Male)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reminder-banner">
+        <div class="reminder-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+        </div>
+        <span class="reminder-text">Please join 5 minutes before your scheduled time.</span>
+      </div>
+    </div>
+    </div>
+
+    <!-- IMPORTANT INFORMATION -->
+    <div class="info-card">
+      <div class="info-title">Important Information</div>
+      <div class="info-list">
+
+        <div class="info-item">
+          <div class="info-icon-wrap cal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </div>
+          <span class="info-item-text">You can reschedule or cancel your appointment up to 2 hours before the scheduled time.</span>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon-wrap vid">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="23 7 16 12 23 17 23 7"/>
+              <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+            </svg>
+          </div>
+          <span class="info-item-text">For video consultation, ensure a stable internet connection.</span>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon-wrap doc">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
+            </svg>
+          </div>
+          <span class="info-item-text">Keep your child's assessment report and relevant documents handy.</span>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon-wrap support">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+              <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/>
+              <path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+            </svg>
+          </div>
+          <span class="info-item-text">Need help? Contact our support team anytime.</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- GO TO DASHBOARD -->
+    <a href="dashboard.html" class="login-btn">
+      <span>Go to Dashboard</span>
+    </a>
+
+    <!-- SECURE FOOTER -->
+    <div class="secure-footer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      </svg>
+      <span>Secure &amp; Confidential</span>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
