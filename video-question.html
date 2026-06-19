@@ -23,7 +23,7 @@
         }
 
         .app {
-            max-width: 420px;
+            max-width: 100%;
             margin: 0 auto;
             background: #fafafa;
             min-height: 100vh;
@@ -117,7 +117,7 @@
             align-items: center;
             gap: 10px
         }
-
+        
         .progress-bar {
             flex: 1;
             height: 6px;
@@ -341,6 +341,38 @@
         .app-header{
             background-color: white;
         }
+        i.bi.bi-eye {
+    color: white;
+    font-size: 22px;
+}
+i.bi.bi-chat-fill {
+    color: white;
+}
+i.bi.bi-people-fill {
+    color: white;
+}
+i.bi.bi-hand-index-thumb {
+    color: white;
+}
+i.bi.bi-globe {
+    color: white;
+}
+i.bi.bi-house-heart {
+    color: white;
+}
+
+i.bi.bi-person-walking {
+    color: white;
+}
+i.bi.bi-pen-fill {
+    color: white;
+}
+i.bi.bi-book-fill {
+    color: white;
+}
+i.bi.bi-emoji-smile-fill {
+    color: white;
+}
     </style>
 </head>
 
@@ -520,6 +552,662 @@
                     </div>
                 </div>
             </div>
+
+
+            
+            <div class="section" data-section="4">
+                <div class="section-header" onclick="toggle(this)">
+                    <div class="section-left">
+                        <div class="section-icon" style="background:#0faa29"><i class="bi bi-eye"></i></div>
+                        <div class="section-title" style="color:#0faa29">Eye Contact</div>
+                    </div>
+                    <span class="chevron open"> <i class="bi bi-chevron-down"></i>  </span>
+                </div>
+                <div class="section-body open">
+                    <div class="field-group three-col">
+                    
+                            <div class="small-label">1. Makes eye Contact during play? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                                </div>
+                       
+                   
+
+                      <div class="field-group three-col">
+                       
+                            <div class="small-label">2. Maintains eye Contact during conservation? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                       
+                       
+                    </div>
+
+                      <div class="field-group three-col">
+                      
+                       
+                      
+                            <div class="small-label">3. Smiles back when you smile? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                        
+                    </div>
+                </div>
+            </div>
+
+ <div class="section" data-section="5">
+                <div class="section-header" onclick="toggle(this)">
+                    <div class="section-left">
+                        <div class="section-icon" style="background:#1882d6;"><i class="bi bi-chat-fill"></i></div>
+                        <div class="section-title" style="color:#1882d6;">Communication</div>
+                    </div>
+                    <span class="chevron open"> <i class="bi bi-chevron-down"></i>  </span>
+                </div>
+                <div class="section-body open">
+                    <div class="field-group three-col">
+                    
+                            <div class="small-label">1. Uses words to communicate? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                                </div>
+                       
+                   
+
+                      <div class="field-group three-col">
+                       
+                            <div class="small-label">2. How many meaningful words? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                       
+                       
+                    </div>
+
+                      <div class="field-group three-col">
+                      
+                       
+                      
+                            <div class="small-label">3. Follows one-step instruction? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                        
+                    </div>
+                </div>
+            </div>
+
+ <div class="section" data-section="6">
+                <div class="section-header" onclick="toggle(this)">
+                    <div class="section-left">
+                        <div class="section-icon" style="background:#e66e0c;"><i class="bi bi-people-fill"></i></div>
+                        <div class="section-title" style="color:#e66e0c;">Social Interaction </div>
+                    </div>
+                    <span class="chevron open"> <i class="bi bi-chevron-down"></i>  </span>
+                </div>
+                <div class="section-body open">
+                    <div class="field-group three-col">
+                    
+                            <div class="small-label">1. Enjoys playing  with Other children? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                                </div>
+                       
+                   
+
+                      <div class="field-group three-col">
+                       
+                            <div class="small-label">2. Brings objects to show you? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                       
+                       
+                    </div>
+
+                      <div class="field-group three-col">
+                      
+                       
+                      
+                            <div class="small-label">3. Imitates action? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            
+ <div class="section" data-section="7">
+                <div class="section-header" onclick="toggle(this)">
+                    <div class="section-left">
+                        <div class="section-icon" style="background:#10b9a9;"><i class="bi bi-eye"></i></div>
+                        <div class="section-title" style="color:#10b9a9;">Play Skills</div>
+                    </div>
+                    <span class="chevron open"> <i class="bi bi-chevron-down"></i>  </span>
+                </div>
+                <div class="section-body open">
+                    <div class="field-group three-col">
+                    
+                            <div class="small-label">1. Plays appropriately with tous? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                                </div>
+                       
+                   
+
+                      <div class="field-group three-col">
+                       
+                            <div class="small-label">2. Engages in pretend play? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                       
+                       
+                    </div>
+
+                      <div class="field-group three-col">
+                      
+                       
+                      
+                            <div class="small-label">3. Prefers playing alone? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                        
+                    </div>
+                </div>
+            </div>
+
+           
+ <div class="section" data-section="8">
+                <div class="section-header" onclick="toggle(this)">
+                    <div class="section-left">
+                        <div class="section-icon" style="background:#df0c5ccf;"><i class="bi bi-eye"></i></div>
+                        <div class="section-title" style="color:#df0c5ccf;">Repetitive Behaviours </div>
+                    </div>
+                    <span class="chevron open"> <i class="bi bi-chevron-down"></i>  </span>
+                </div>
+                <div class="section-body open">
+                    <div class="field-group three-col">
+                    
+                            <div class="small-label">1. Hand flapping?<span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                                </div>
+                       
+                   
+
+                      <div class="field-group three-col">
+                       
+                            <div class="small-label">2. Toe walking? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                       
+                       
+                    </div>
+
+                      <div class="field-group three-col">
+                      
+                       
+                      
+                            <div class="small-label">3. Repeating words or sounds?<span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                        
+                    </div>
+                </div>
+            </div>
+
+             <div class="section" data-section="9">
+                <div class="section-header" onclick="toggle(this)">
+                    <div class="section-left">
+                        <div class="section-icon" style="background:#c82be3d9;"><i class="bi bi-hand-index-thumb"></i></div>
+                        <div class="section-title" style="color:#eb11e0cf;"> Sensory Profile </div>
+                    </div>
+                    <span class="chevron open"> <i class="bi bi-chevron-down"></i>  </span>
+                </div>
+                <div class="section-body open">
+                    <div class="field-group three-col">
+                    
+                            <div class="small-label">1. Covers ears to sounds?<span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                                </div>
+                       
+                   
+
+                      <div class="field-group three-col">
+                       
+                            <div class="small-label">2. Sensitive to touch? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                       
+                       
+                    </div>
+
+                      <div class="field-group three-col">
+                      
+                       
+                      
+                            <div class="small-label">3. Picky eater? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                        
+                    </div>
+                </div>
+            </div>
+
+                <div class="section" data-section="10">
+                <div class="section-header" onclick="toggle(this)">
+                    <div class="section-left">
+                        <div class="section-icon" style="background:#4011ebcf;"><i class="bi bi-globe"></i></div>
+                        <div class="section-title" style="color:#4011ebcf;"> Attention & ADHD </div>
+                    </div>
+                    <span class="chevron open"> <i class="bi bi-chevron-down"></i>  </span>
+                </div>
+                <div class="section-body open">
+                    <div class="field-group three-col">
+                    
+                            <div class="small-label">1. Can sit for 5 minutes? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                                </div>
+                       
+                   
+
+                      <div class="field-group three-col">
+                       
+                            <div class="small-label">2. Easily distracted? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                       
+                       
+                    </div>
+
+                      <div class="field-group three-col">
+                      
+                       
+                      
+                            <div class="small-label">3. Frequently fidgets? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                        
+                    </div>
+                </div>
+            </div>
+
+                <div class="section" data-section="11">
+                <div class="section-header" onclick="toggle(this)">
+                    <div class="section-left">
+                        <div class="section-icon" style="background:#19ac19a6;"><i class="bi bi-house-heart"></i></div>
+                        <div class="section-title" style="color:#19ac19a6;"> Daily Living Skills</div>
+                    </div>
+                    <span class="chevron open"> <i class="bi bi-chevron-down"></i>  </span>
+                </div>
+                <div class="section-body open">
+                    <div class="field-group three-col">
+                    
+                            <div class="small-label">1. Eats independently? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                                </div>
+                       
+                   
+
+                      <div class="field-group three-col">
+                       
+                            <div class="small-label">2. Dresses independently? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                       
+                       
+                    </div>
+
+                      <div class="field-group three-col">
+                      
+                       
+                      
+                            <div class="small-label">3. Uses toilet independently? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                        
+                    </div>
+                </div>
+            </div>
+
+   <div class="section" data-section="12">
+                <div class="section-header" onclick="toggle(this)">
+                    <div class="section-left">
+                        <div class="section-icon" style="background:#eb8d11cf;"><i class="bi bi-person-walking"></i></div>
+                        <div class="section-title" style="color:#eb8d11cf;"> Gross Motor Skills</div>
+                    </div>
+                    <span class="chevron open"> <i class="bi bi-chevron-down"></i>  </span>
+                </div>
+                <div class="section-body open">
+                    <div class="field-group three-col">
+                    
+                            <div class="small-label">1. Can run? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                                </div>
+                       
+                   
+
+                      <div class="field-group three-col">
+                       
+                            <div class="small-label">2. Can jump? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                       
+                       
+                    </div>
+
+                      <div class="field-group three-col">
+                      
+                       
+                      
+                            <div class="small-label">3. Can climb stairs? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+   <div class="section" data-section="13">
+                <div class="section-header" onclick="toggle(this)">
+                    <div class="section-left">
+                        <div class="section-icon" style="background:#11ebc7cf;"><i class="bi bi-pen-fill"></i></div>
+                        <div class="section-title" style="color:#11ebc7cf;"> Fine Motor Skills</div>
+                    </div>
+                    <span class="chevron open"> <i class="bi bi-chevron-down"></i>  </span>
+                </div>
+                <div class="section-body open">
+                    <div class="field-group three-col">
+                    
+                            <div class="small-label">1. Can hold crayon? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                                </div>
+                       
+                   
+
+                      <div class="field-group three-col">
+                       
+                            <div class="small-label">2. Can acribble? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                       
+                       
+                    </div>
+
+                      <div class="field-group three-col">
+                      
+                       
+                      
+                            <div class="small-label">3. Can copy shapes? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            
+   <div class="section" data-section="14">
+                <div class="section-header" onclick="toggle(this)">
+                    <div class="section-left">
+                        <div class="section-icon" style="background:#e0578bcf;"><i class="bi bi-book-fill"></i></div>
+                        <div class="section-title" style="color:#e0578bcf;"> Academic Skills</div>
+                    </div>
+                    <span class="chevron open"> <i class="bi bi-chevron-down"></i>  </span>
+                </div>
+                <div class="section-body open">
+                    <div class="field-group three-col">
+                    
+                            <div class="small-label">1. Recognizes colours? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                                </div>
+                       
+                   
+
+                      <div class="field-group three-col">
+                       
+                            <div class="small-label">2. Count numbers? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                       
+                       
+                    </div>
+
+                      <div class="field-group three-col">
+                      
+                       
+                      
+                            <div class="small-label">3. Recognizes letters? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                        
+                    </div>
+                </div>
+            </div>
+ <div class="section" data-section="15">
+                <div class="section-header" onclick="toggle(this)">
+                    <div class="section-left">
+                        <div class="section-icon" style="background:#e057cecf;"><i class="bi bi-emoji-smile-fill"></i></div>
+                        <div class="section-title" style="color:#e057cecf;"> Behaviour </div>
+                    </div>
+                    <span class="chevron open"> <i class="bi bi-chevron-down"></i>  </span>
+                </div>
+                <div class="section-body open">
+                    <div class="field-group three-col">
+                    
+                            <div class="small-label">1. Tantrums? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                                </div>
+                       
+                   
+
+                      <div class="field-group three-col">
+                       
+                            <div class="small-label">2. Sleep difficulties? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                       
+                       
+                    </div>
+
+                      <div class="field-group three-col">
+                      
+                       
+                      
+                            <div class="small-label">3. Emotional regulation concern? <span class="req">*</span></div>
+                            <div class="select-wrap"><select onchange="calcProgress()">
+                                    <option value="">Select</option>
+                                    <option>Always</option>
+                                    <option>Sometimes</option>
+                                    <option>Rarely</option>
+                                    <option>Never</option>
+                                </select></div>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
 
         <div  class="submit-bar">
